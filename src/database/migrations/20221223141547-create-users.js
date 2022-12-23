@@ -1,56 +1,48 @@
 'use strict';
-require('bcrypt')
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  up(queryInterface, S) {
+  up(queryInterface, Sequelize) {
     return queryInterface.createTable('users', {
       id: {
-        type: S.UUID,
-        defaultValue: S.UUIDV4,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
       },
       cpf: {
-        type: S.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       name: {
-        type: S.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       email: {
-        type: S.STRING,
+        type: Sequelize.STRING,
         unique: true,
         allowNull: false,
       },
       password_hash: {
-        type: S.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       created_at: {
-        type: S.DATE,
+        type: Sequelize.DATE,
         allowNull: false,
 
       },
       updated_at: {
-        type: S.DATE,
+        type: Sequelize.DATE,
         allowNull: false,
       },
       deleted_at: {
-        type: S.DATE,
+        type: Sequelize.DATE,
         allowNull: false,
-      }
+      },
     });
-
   },
 
-  async down(queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+  down(queryInterface, Sequelize) {
+    return queryInterface.dropTable('users');
   }
 };
