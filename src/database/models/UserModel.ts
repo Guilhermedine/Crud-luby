@@ -1,4 +1,4 @@
-import { sequelize } from 'config/database';
+import { sequelize } from '../../config/database';
 import { Model, DataTypes } from 'sequelize';
 
 class UserModel extends Model {}
@@ -12,7 +12,8 @@ UserModel.init ({
   tableName: "user",
   timestamps: false,
   sequelize
-}
-)
+});
 
+
+export default UserModel
 
