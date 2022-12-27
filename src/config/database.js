@@ -4,7 +4,6 @@ module.exports = {
   password: 'docker',
   database: 'crud',
   dialect: 'postgres',
-  operatorsAliases: false,
   logging: false,
   define: {
     timestamps: true,

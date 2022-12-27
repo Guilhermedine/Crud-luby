@@ -4,13 +4,12 @@ module.exports = {
   up(queryInterface, Sequelize) {
     return queryInterface.createTable('users', {
       id: {
+        primaryKey: true,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
-        allowNull: false,
-        primaryKey: true,
       },
       cpf: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       name: {
@@ -26,10 +25,16 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      avatar: {
+        type: Sequelize.STRING,
+      },
+      biography: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
-
       },
       updated_at: {
         type: Sequelize.DATE,
@@ -37,7 +42,6 @@ module.exports = {
       },
       deleted_at: {
         type: Sequelize.DATE,
-        allowNull: false,
       },
     });
   },
