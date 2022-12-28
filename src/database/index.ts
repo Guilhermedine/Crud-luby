@@ -1,8 +1,7 @@
 import Sequelize from 'sequelize';
-//import { UserModel }  from '../app/models/UserModel'
 import databaseConfig from '../../sequelize.js';
 
- 
+
 
 class Database {
   public connection: Sequelize.Sequelize;

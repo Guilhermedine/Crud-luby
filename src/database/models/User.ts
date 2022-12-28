@@ -3,7 +3,11 @@ import { Model, DataTypes } from 'sequelize';
 
 
 
-class User extends Model { }
+class User extends Model {
+  id;
+  password_hash;
+  name;
+}
 User.init({
   id: {
     type: DataTypes.UUIDV4,
