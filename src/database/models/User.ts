@@ -41,11 +41,9 @@ User.init({
 }, {
   tableName: "users",
   timestamps: false,
-  sequelize
+  sequelize: sequelize
 });
 
-const users = User.findAll();
-console.log(users);
 
 
 
