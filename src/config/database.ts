@@ -10,5 +10,5 @@ export const sequelize = new Sequelize({
   define: {
     underscored: true,
     timestamps: true,
-    },
+  },
 });

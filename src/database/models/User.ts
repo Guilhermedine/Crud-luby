@@ -1,10 +1,10 @@
 import { sequelize } from '../../config/database';
 import { Model, DataTypes } from 'sequelize';
-import bcrypt from 'bcrypt'
 
 
-class User extends Model {}
-User.init ({
+
+class User extends Model { }
+User.init({
   id: {
     type: DataTypes.UUIDV4,
     autoIncrement: true,
@@ -44,10 +44,9 @@ User.init ({
   sequelize
 });
 
+(async () => {
+  await sequelize.sync({ force: true });
+})();
 
-
-
-
-
-export { User } 
+export { User }
 
