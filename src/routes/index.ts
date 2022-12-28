@@ -1,12 +1,11 @@
 import { Router } from "express"
 
-const routes = Router();
+import { usersRouter } from "./users.routes";
 
 
-routes.get("/", (req, res) => {
-  return res.json({ message: "hello world" })
-});
+const router = Router();
+
+router.use("/users", usersRouter);
 
 
-
-export { routes }
+export { router }

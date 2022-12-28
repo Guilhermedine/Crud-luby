@@ -44,9 +44,10 @@ User.init({
   sequelize
 });
 
-(async () => {
-  await sequelize.sync({ force: true });
-})();
+const users = User.findAll();
+console.log(users);
+
+
 
 export { User }
 

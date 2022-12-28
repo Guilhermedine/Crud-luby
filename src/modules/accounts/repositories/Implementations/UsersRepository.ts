@@ -1,10 +1,10 @@
-import { IUserRepository } from "../IUsersRepository";
-import { ICreateUserDTO } from "../../../dtos/ICreateUserDTO"
-import { User } from "database/models/User";
+import { IUsersRepository } from "../IUsersRepository";
+import { ICreateUserDTO } from "../../dtos/ICreateUserDTO"
+import { User } from "../../../../database/models/User";
 
 
 
-class UsersRepository implements IUserRepository {
+class UsersRepository implements IUsersRepository {
 
   async create({
     cpf,
