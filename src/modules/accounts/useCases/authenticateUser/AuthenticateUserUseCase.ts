@@ -1,8 +1,7 @@
 import { IUsersRepository } from "../../repositories/IUsersRepository";
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 import { sign } from "jsonwebtoken"
 import { compare } from "bcrypt";
-
 
 
 interface IRequest {
@@ -12,12 +11,13 @@ interface IRequest {
 
 interface IResponse {
   user: {
-    name: string;
     email: string;
+    name: string;
   };
   token: string;
 }
 
+@injectable()
 class AuthenticateUserUseCase {
   constructor(
     @inject("UsersRepository")
@@ -42,10 +42,12 @@ class AuthenticateUserUseCase {
     });
 
     return {
-      user,
+      user: {
+        email,
+        name: user.name
+      },
       token,
     }
-
   }
 }
 
