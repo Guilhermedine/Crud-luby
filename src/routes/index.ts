@@ -2,12 +2,12 @@ import { Router } from "express"
 import { authenticateRoutes } from "./authenticate.routes";
 import { listAccountsRoutes } from "./listAccounts.routes";
 
-import { usersRouter } from "./users.routes";
+import { usersRoutes } from "./users.routes";
 
 
 const router = Router();
 
-router.use("/users", usersRouter);
+router.use("/users", usersRoutes);
 
 router.use(authenticateRoutes)
 
