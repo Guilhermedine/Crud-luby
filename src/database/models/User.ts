@@ -7,6 +7,7 @@ class User extends Model {
   id;
   password_hash;
   name;
+  avatar;
 }
 User.init({
   id: {
