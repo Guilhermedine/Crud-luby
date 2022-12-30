@@ -7,6 +7,7 @@ interface IUsersRepository {
   findByEmail(email: string): Promise<User>
   list(): Promise<User[]>;
   findById(id: string): Promise<User>
+  validateCPF(cpf: string)
 }
 
 export { IUsersRepository }

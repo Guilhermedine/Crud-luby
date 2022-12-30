@@ -1,0 +1,10 @@
+
+
+
+
+class UserAvatarController {
+
+}
+
+
+export { UserAvatarController }

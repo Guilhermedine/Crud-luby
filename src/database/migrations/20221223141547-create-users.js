@@ -6,11 +6,11 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        default: Sequelize.UUID4,
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
+        unique: true
       },
       cpf: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       name: {
@@ -35,6 +35,8 @@ module.exports = {
       },
       created_at: {
         type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('now()'),
+        allowNull: false
       },
       updated_at: {
         type: Sequelize.DATE,

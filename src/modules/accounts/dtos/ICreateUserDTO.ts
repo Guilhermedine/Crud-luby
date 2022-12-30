@@ -1,5 +1,5 @@
 interface ICreateUserDTO {
-  cpf: number,
+  cpf: string,
   name: string,
   email: string,
   password_hash: string,

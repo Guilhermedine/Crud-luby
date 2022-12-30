@@ -16,7 +16,7 @@ User.init({
     defaultValue: DataTypes.UUIDV1,
   },
   cpf: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
   },
   name: {
     type: DataTypes.STRING,
@@ -35,6 +35,7 @@ User.init({
   },
   created_at: {
     type: DataTypes.DATE,
+    allowNull: true
   },
   updated_at: {
     type: DataTypes.DATE,

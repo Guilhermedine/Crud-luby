@@ -23,6 +23,12 @@ class CreateUserUseCase {
       throw new Error("User Already Exists!")
     }
 
+    const invalidCpf = await this.usersRepository.validateCPF(cpf);
+    if (invalidCpf == false) {
+      throw new Error("Invalid CPF")
+    }
+
+
     const passwordHash = await hash(password_hash, 8);
 
     await this.usersRepository.create({
