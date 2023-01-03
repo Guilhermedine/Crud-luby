@@ -8,6 +8,7 @@ class User extends Model {
   password_hash;
   name;
   avatar;
+  cpf;
 }
 User.init({
   id: {

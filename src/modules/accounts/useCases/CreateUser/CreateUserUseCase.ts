@@ -14,6 +14,7 @@ class CreateUserUseCase {
     cpf,
     name,
     email,
+    avatar,
     password_hash,
     biography
   }: ICreateUserDTO) {
@@ -35,6 +36,7 @@ class CreateUserUseCase {
       cpf,
       name,
       email,
+      avatar,
       password_hash: passwordHash,
       biography
     })

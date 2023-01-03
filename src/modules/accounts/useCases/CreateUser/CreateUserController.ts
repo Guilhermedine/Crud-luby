@@ -7,12 +7,13 @@ import { Request, Response } from "express"
 class CreateUserController {
 
   async handle(req: Request, res: Response): Promise<Response> {
-    const { cpf, name, email, password_hash, biography } = req.body;
+    const { cpf, name, email, avatar, password_hash, biography } = req.body;
     const createUserUseCase = container.resolve(CreateUserUseCase);
 
     await createUserUseCase.execute({
       cpf,
       name,
+      avatar,
       email,
       password_hash,
       biography
