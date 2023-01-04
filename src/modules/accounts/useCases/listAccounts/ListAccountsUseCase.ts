@@ -1,4 +1,4 @@
-import { User } from "../../../../database/models/User";
+import { User } from "database/models/User";
 import { injectable, inject } from "tsyringe";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 

@@ -8,7 +8,6 @@ import { ListAccountsUseCase } from "./ListAccountsUseCase"
 
 
 class ListAccountsController {
-  constructor() { }
   async handle(req: Request, res: Response): Promise<Response> {
     const listAccountsUseCase = container.resolve(ListAccountsUseCase);
     const all = await listAccountsUseCase.execute();
