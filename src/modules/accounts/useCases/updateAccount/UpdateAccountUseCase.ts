@@ -40,11 +40,6 @@ class UpdateAccountUseCase {
       throw new AppError("Email already in use")
     }
 
-    const passwordMatch = await compare(password_hash, user.password_hash)
-    if (!passwordMatch) {
-      throw new AppError("Password incorrect!");
-    }
-
     return {
       name,
       avatar,
