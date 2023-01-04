@@ -2,7 +2,7 @@ import { injectable, inject } from "tsyringe";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { AppError } from "../../../../errors/AppError"
 import { User } from "../../../../database/models/User";
-import { where } from "sequelize";
+import { hash } from "bcrypt"
 
 interface IRequest {
   name,
@@ -40,12 +40,14 @@ class UpdateAccountUseCase {
       throw new AppError("Email already in use")
     }
 
+    const passwordHash = await hash(password_hash, 8);
+
     user.update({
       name,
       avatar,
       biography,
       email,
-      password_hash
+      password_hash: passwordHash
     });
 
     return {
