@@ -7,14 +7,16 @@ import { container } from "tsyringe";
 
 class UpdateAccountController {
   async handle(req: Request, res: Response): Promise<Response> {
+    const { id } = req.user
+
     const {
-      id,
       name,
       avatar,
       biography,
       email,
       password_hash
     } = req.body
+
 
     const updateAccountUseCase = container.resolve(UpdateAccountUseCase)
 

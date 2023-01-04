@@ -5,19 +5,22 @@ import { updateAccountRoutes } from "./updateAccount.routes";
 import { locateUserRoutes } from "./locateUser.routes"
 
 import { usersRoutes } from "./users.routes";
+import { deleteAccountRoutes } from "./deleteAccount.routes";
 
 
 const router = Router();
 
+router.use(deleteAccountRoutes);
+
 router.use(usersRoutes);
 
-router.use(locateUserRoutes)
+router.use(locateUserRoutes);
 
-router.use(authenticateRoutes)
+router.use(authenticateRoutes);
 
-router.use(listAccountsRoutes)
+router.use(listAccountsRoutes);
 
-router.use(updateAccountRoutes)
+router.use(updateAccountRoutes);
 
 
 export { router }

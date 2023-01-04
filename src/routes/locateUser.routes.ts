@@ -6,7 +6,7 @@ const locateUserRoutes = Router();
 
 const locateUserController = new LocateUserController()
 
-locateUserRoutes.get("/account", locateUserController.handle)
+locateUserRoutes.get("/account/:id", locateUserController.handle)
 
 
 export { locateUserRoutes }
