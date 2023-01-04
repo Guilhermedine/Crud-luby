@@ -1,20 +1,19 @@
-import { User } from "../../../../database/models/User";
 import { injectable, inject } from "tsyringe";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { User } from "../../../../database/models/User";
 
 
 
 @injectable()
-class ListAccountsUseCase {
+class UpdateAccountUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository) { }
 
-  async execute(): Promise<User[]> {
-    const accounts = await this.usersRepository.list();
-    return accounts
+  async execute(): Promise<void> {
+    const { name, avatar, biography, email } = req.body
   }
 }
 
 
-export { ListAccountsUseCase }
+export { UpdateAccountUseCase }
