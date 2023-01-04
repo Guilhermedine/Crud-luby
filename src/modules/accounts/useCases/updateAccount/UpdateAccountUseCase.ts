@@ -18,7 +18,7 @@ interface IResponse {
   avatar,
   biography,
   email,
-  password_hash
+  password_hash,
 }
 
 
@@ -47,7 +47,7 @@ class UpdateAccountUseCase {
       avatar,
       biography,
       email,
-      password_hash: passwordHash
+      password_hash: passwordHash,
     });
 
     return {
@@ -55,7 +55,7 @@ class UpdateAccountUseCase {
       avatar,
       biography,
       email,
-      password_hash
+      password_hash,
     }
   }
 }

@@ -40,9 +40,13 @@ module.exports = {
       },
       updated_at: {
         type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('now()'),
+        allowNull: false
       },
       deleted_at: {
         type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('now()'),
+        allowNull: false
       },
     });
   },
