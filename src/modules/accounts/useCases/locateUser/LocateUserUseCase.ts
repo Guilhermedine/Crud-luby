@@ -12,11 +12,13 @@ class LocateUserUseCase {
     @inject("UsersRepository")
     private usersRepository: IUsersRepository) { }
 
-  async execute({ id }): Promise<void> {
+  async execute({ id }): Promise<User> {
     const user = await this.usersRepository.findById(id);
     if (!user) {
       throw new AppError("User not found");
     }
+
+    return user
   }
 }
 
