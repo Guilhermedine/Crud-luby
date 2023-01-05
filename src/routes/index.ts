@@ -5,12 +5,12 @@ import { updateAccountRoutes } from "./updateAccount.routes";
 import { locateUserRoutes } from "./locateUser.routes"
 
 import { usersRoutes } from "./users.routes";
-import { deleteAccountRoutes } from "./deleteAccount.routes";
+import { deleteUserRoutes } from "./deleteUser.routes";
 
 
 const router = Router();
 
-router.use(deleteAccountRoutes);
+router.use(deleteUserRoutes);
 
 router.use(usersRoutes);
 

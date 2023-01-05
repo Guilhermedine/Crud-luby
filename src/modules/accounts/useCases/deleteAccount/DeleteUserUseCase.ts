@@ -6,7 +6,7 @@ import { AppError } from "../../../../errors/AppError";
 
 
 @injectable()
-class DeleteAccountUseCase {
+class DeleteUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository) { }
@@ -28,4 +28,4 @@ class DeleteAccountUseCase {
 }
 
 
-export { DeleteAccountUseCase }
+export { DeleteUserUseCase }
