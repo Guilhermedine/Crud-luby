@@ -1,7 +1,7 @@
 import { Router } from "express"
 import { authenticateRoutes } from "./authenticate.routes";
-import { listAccountsRoutes } from "./listAccounts.routes";
-import { updateAccountRoutes } from "./updateAccount.routes";
+import { listUsersRoutes } from "./listUsers.routes";
+import { updateUserRoutes } from "./updateUser.routes";
 import { locateUserRoutes } from "./locateUser.routes"
 
 import { usersRoutes } from "./users.routes";
@@ -18,9 +18,9 @@ router.use(locateUserRoutes);
 
 router.use(authenticateRoutes);
 
-router.use(listAccountsRoutes);
+router.use(listUsersRoutes);
 
-router.use(updateAccountRoutes);
+router.use(updateUserRoutes);
 
 
 export { router }

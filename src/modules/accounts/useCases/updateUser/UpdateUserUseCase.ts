@@ -23,7 +23,7 @@ interface IResponse {
 
 
 @injectable()
-class UpdateAccountUseCase {
+class UpdateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository) { }
@@ -61,4 +61,4 @@ class UpdateAccountUseCase {
 }
 
 
-export { UpdateAccountUseCase }
+export { UpdateUserUseCase }

@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { UpdateAccountUseCase } from "./UpdateAccountUseCase";
+import { UpdateUserUseCase } from "./UpdateUserUseCase";
 import { container } from "tsyringe";
 
 
 
 
-class UpdateAccountController {
+class UpdateUserController {
   async handle(req: Request, res: Response): Promise<Response> {
     const { id } = req.user
 
@@ -18,9 +18,9 @@ class UpdateAccountController {
     } = req.body
 
 
-    const updateAccountUseCase = container.resolve(UpdateAccountUseCase)
+    const updateUserUseCase = container.resolve(UpdateUserUseCase)
 
-    const update = await updateAccountUseCase.execute({
+    const update = await updateUserUseCase.execute({
       id,
       name,
       avatar,
@@ -33,4 +33,4 @@ class UpdateAccountController {
   }
 }
 
-export { UpdateAccountController }
+export { UpdateUserController }

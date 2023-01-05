@@ -5,7 +5,7 @@ import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 
 @injectable()
-class ListAccountsUseCase {
+class ListUsersUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository) { }
@@ -17,4 +17,4 @@ class ListAccountsUseCase {
 }
 
 
-export { ListAccountsUseCase }
+export { ListUsersUseCase }
