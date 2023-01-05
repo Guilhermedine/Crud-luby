@@ -10,7 +10,7 @@ class DeleteAccountController {
     const deleteAccountUseCase = container.resolve(DeleteAccountUseCase);
     await deleteAccountUseCase.execute({ id });
 
-    return res.json({ message: "User Deleted!" })
+    return res.json({ message: "User Deleted!" }).status(200).send();
   }
 }
 

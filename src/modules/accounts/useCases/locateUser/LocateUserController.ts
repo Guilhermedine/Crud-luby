@@ -10,7 +10,7 @@ class LocateUserController {
     console.log(id);
     const locateUserUseCase = container.resolve(LocateUserUseCase);
     const account = await locateUserUseCase.execute({ id });
-    return res.json(account).status(200)
+    return res.json(account).status(200).send()
   }
 }
 

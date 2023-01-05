@@ -29,7 +29,7 @@ class UpdateAccountController {
       password_hash
     })
 
-    return res.json(update)
+    return res.json(update).status(200).send()
   }
 }
 

@@ -12,7 +12,7 @@ class ListAccountsController {
     const listAccountsUseCase = container.resolve(ListAccountsUseCase);
     const all = await listAccountsUseCase.execute();
 
-    return res.json(all)
+    return res.json(all).status(200).send();
   }
 }
 
