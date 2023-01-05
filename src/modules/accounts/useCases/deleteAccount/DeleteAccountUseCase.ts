@@ -17,9 +17,11 @@ class DeleteAccountUseCase {
       throw new AppError("User not found");
     }
 
+
     await User.destroy({
       where: { id },
     });
+
 
     return
   }
