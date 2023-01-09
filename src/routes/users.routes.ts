@@ -3,8 +3,8 @@ import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 import { UpdateUserController } from "../modules/accounts/useCases/updateUser/UpdateUserController";
 import { CreateUserController } from "../modules/accounts/useCases/createUser/CreateUserController"
 import { LocateUserController } from "../modules/accounts/useCases/locateUser/LocateUserController";
-import { ListUsersController } from "../modules/accounts/useCases/listUsers/ListUsersController"
-import { DeleteUserController } from "../modules/accounts/useCases/deleteUser/DeleteUserController"
+import { ListUsersController } from "../modules/accounts/useCases/listUsers/ListUsersController";
+import { DeleteUserController } from "../modules/accounts/useCases/deleteUser/DeleteUserController";
 
 const usersRoutes = Router();
 
@@ -22,11 +22,10 @@ usersRoutes.post("/", createUserController.handle);
 
 usersRoutes.get("/", listUsersController.handle);
 
-usersRoutes.put("/:id", ensureAuthenticated, updateUserController.handle);
+usersRoutes.put("/", ensureAuthenticated, updateUserController.handle);
 
 usersRoutes.get("/:id", locateUserController.handle);
 
-
-usersRoutes.delete("/", ensureAuthenticated, deleteUserController.handle)
+usersRoutes.delete("/", ensureAuthenticated, deleteUserController.handle);
 
 export { usersRoutes };

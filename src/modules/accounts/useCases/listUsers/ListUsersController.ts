@@ -11,7 +11,7 @@ class ListUsersController {
     const listUsersUseCase = container.resolve(ListUsersUseCase);
     const all = await listUsersUseCase.execute();
 
-    return res.json(all).status(200).send();
+    return res.status(200).json(all);
   }
 }
 
