@@ -1,7 +1,8 @@
 import { Router } from "express";
+const listUsersRoutes = Router();
+
 import { ListUsersController } from "../modules/accounts/useCases/listUsers/ListUsersController"
 
-const listUsersRoutes = Router();
 
 const listUsersController = new ListUsersController()
 

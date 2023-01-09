@@ -12,7 +12,7 @@ const router = Router();
 
 router.use(deleteUserRoutes);
 
-router.use(usersRoutes);
+router.use("/users", usersRoutes);
 
 router.use(locateUserRoutes);
 
