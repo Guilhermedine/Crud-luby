@@ -12,18 +12,17 @@ class DeleteUserUseCase {
     private usersRepository: IUsersRepository) { }
 
   async execute({ id }): Promise<User> {
-    const user = await this.usersRepository.findById(id);
+    const user = await this.usersRepository.findById(id)
     if (!user) {
-      throw new AppError("User not found");
+      throw new AppError("User not found", 400);
     }
-
 
     await User.destroy({
       where: { id },
     });
 
 
-    return
+    return user
   }
 }
 

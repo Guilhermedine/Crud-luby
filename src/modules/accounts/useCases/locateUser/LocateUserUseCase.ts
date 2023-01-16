@@ -15,7 +15,7 @@ class LocateUserUseCase {
   async execute({ id }): Promise<User> {
     const user = await this.usersRepository.findById(id);
     if (!user) {
-      throw new AppError("User not found");
+      throw new Error("User not found");
     }
 
     return user

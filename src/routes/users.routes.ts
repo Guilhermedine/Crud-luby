@@ -26,6 +26,6 @@ usersRoutes.put("/", ensureAuthenticated, updateUserController.handle);
 
 usersRoutes.get("/:id", locateUserController.handle);
 
-usersRoutes.delete("/", ensureAuthenticated, deleteUserController.handle);
+usersRoutes.delete("/:id", ensureAuthenticated, deleteUserController.handle);
 
 export { usersRoutes };

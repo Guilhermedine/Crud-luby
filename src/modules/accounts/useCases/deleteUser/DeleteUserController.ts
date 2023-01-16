@@ -6,11 +6,12 @@ import { DeleteUserUseCase } from "./DeleteUserUseCase";
 
 class DeleteUserController {
   async handle(req: Request, res: Response): Promise<Response> {
-    const { id } = req.body
-    const deleteUserUseCase = container.resolve(DeleteUserUseCase);
-    await deleteUserUseCase.execute({ id });
+    const { id } = req.params
 
-    return res.json({ message: "User Deleted!" }).status(200);
+    const deleteUserUseCase = container.resolve(DeleteUserUseCase);
+    const userDeleted = await deleteUserUseCase.execute({ id });
+
+    return res.json({ message: userDeleted }).status(200);
   }
 }
 
