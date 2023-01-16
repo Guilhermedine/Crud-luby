@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe"
-import { AppError } from "../../../errors/AppError";
-import { ICarDTO } from "../dtos/ICarDTO";
-import { ICarsRepository } from "../repositories/ICarsRepository";
+import { AppError } from "../../../../errors/AppError";
+import { ICarDTO } from "../../dtos/ICarDTO";
+import { ICarsRepository } from "../../repositories/ICarsRepository";
 
 @injectable()
 class AddCarUseCase {
@@ -24,6 +24,17 @@ class AddCarUseCase {
     if (carAlreadyExists) {
       throw new AppError("Car Already Exists!")
     }
+
+    await this.carsRepository.create({
+      brand,
+      model,
+      year,
+      km,
+      color,
+      chassis,
+      purchase_price,
+      status,
+    })
   }
 }
 

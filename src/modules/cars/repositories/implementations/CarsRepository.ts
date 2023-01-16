@@ -1,7 +1,6 @@
 import { ICarDTO } from "modules/cars/dtos/ICarDTO";
 import { ICarsRepository } from "../ICarsRepository";
 import { Car } from "../../../../database/models/"
-import { AppError } from "errors/AppError";
 
 
 
@@ -39,6 +38,7 @@ class CarsRepository implements ICarsRepository {
 
   async findByChassi(chassis: string): Promise<Car> {
     const car = await Car.findOne({ where: { chassis } })
+    return car
   }
 }
 

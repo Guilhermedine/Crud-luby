@@ -4,7 +4,6 @@ import { Model, DataTypes } from 'sequelize';
 
 
 class Car extends Model {
-  chassi
 }
 
 Car.init({
@@ -52,7 +51,7 @@ Car.init({
   timestamps: true,
   createdAt: "created_at",
   updatedAt: "updated_at",
-  sequelize: sequelize
+  sequelize: sequelize,
 });
 
 

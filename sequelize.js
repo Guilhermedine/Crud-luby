@@ -9,6 +9,9 @@ module.exports = {
   define: {
     timestamps: true,
     underscored: true,
-    underscoredAll: true,
   },
 };
+
+
+
+module.exports = $NODE_ENV = development
