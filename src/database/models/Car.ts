@@ -4,6 +4,7 @@ import { Model, DataTypes } from 'sequelize';
 
 
 class Car extends Model {
+  chassi
 }
 
 Car.init({

@@ -4,6 +4,7 @@ import { Car } from "../../../../database/models/"
 import { AppError } from "errors/AppError";
 
 
+
 class CarsRepository implements ICarsRepository {
 
   async create({
@@ -30,9 +31,14 @@ class CarsRepository implements ICarsRepository {
 
     await car.save()
   }
+
   async list(): Promise<Car[]> {
     const all = await Car.findAll()
     return all
+  }
+
+  async findByChassi(chassis: string): Promise<Car> {
+    const car = await Car.findOne({ where: { chassis } })
   }
 }
 
