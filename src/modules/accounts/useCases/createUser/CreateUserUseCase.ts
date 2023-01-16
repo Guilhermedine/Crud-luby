@@ -27,7 +27,7 @@ class CreateUserUseCase {
 
     const invalidCpf = await this.usersRepository.validateCPF(cpf);
     if (invalidCpf == false) {
-      throw new Error("Invalid CPF")
+      throw new AppError("Invalid CPF")
     }
 
 
