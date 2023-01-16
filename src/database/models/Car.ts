@@ -3,10 +3,10 @@ import { Model, DataTypes } from 'sequelize';
 
 
 
-class Cars extends Model {
+class Car extends Model {
 }
 
-Cars.init({
+Car.init({
   id: {
     type: DataTypes.UUIDV4,
     autoIncrement: true,
@@ -53,3 +53,6 @@ Cars.init({
   updatedAt: "updated_at",
   sequelize: sequelize
 });
+
+
+export { Car }

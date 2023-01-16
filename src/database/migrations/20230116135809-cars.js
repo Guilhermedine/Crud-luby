@@ -38,13 +38,21 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      reservation_amount: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      sale_value: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       status: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       solded_by: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,
