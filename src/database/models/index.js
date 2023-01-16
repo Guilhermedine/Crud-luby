@@ -10,8 +10,8 @@ const config = require('../../config/database');
 const db = {};
 
 const sequelize = new Sequelize(config.database, config.username, config.password, {
-  dialect: 'postgres',
-});
+  dialect: 'postgres'
+}, config);
 
 fs
   .readdirSync(__dirname)
