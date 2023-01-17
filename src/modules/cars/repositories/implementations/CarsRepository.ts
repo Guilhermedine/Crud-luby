@@ -1,9 +1,9 @@
+import { AppError } from "../../../../errors/AppError";
 import { Car } from "../../../../database/models/Car";
 import { ICarDTO } from "../../dtos/ICarDTO";
+import { ICarFiltersDTO } from "../../dtos/ICarFiltersDTO";
+import { ICarUpdateDTO } from "../../dtos/ICarUpdateDTO";
 import { ICarsRepository } from "../ICarsRepository";
-
-
-
 
 class CarsRepository implements ICarsRepository {
 
@@ -32,8 +32,8 @@ class CarsRepository implements ICarsRepository {
     await car.save()
   }
 
-  async list(): Promise<Car[]> {
-    const all = await Car.findAll()
+  async list({ status }: ICarFiltersDTO): Promise<Car[]> {
+    const all = await Car.findAll({ where: status ? { status } : null })
     return all
   }
 
@@ -45,6 +45,16 @@ class CarsRepository implements ICarsRepository {
   async findById(id: string): Promise<Car> {
     const car = await Car.findOne({ where: { id } })
     return car
+  }
+
+  async update(car: Car, { solded_by, status, sale_value }: ICarUpdateDTO): Promise<Car> {
+    const result = await car.update({
+      solded_by,
+      status,
+      sale_value
+    })
+
+    return result
   }
 }
 
