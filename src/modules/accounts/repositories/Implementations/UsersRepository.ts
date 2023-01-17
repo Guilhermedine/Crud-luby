@@ -1,6 +1,7 @@
 import { IUsersRepository } from "../IUsersRepository";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO"
 import { User } from "../../../../database/models/User";
+import { IUpdateUserDTO } from "modules/accounts/dtos/IUpdateUserDTO";
 
 
 
@@ -42,7 +43,7 @@ class UsersRepository implements IUsersRepository {
     return user
   }
 
-  validateCPF(cpf: string) {
+  async validateCPF(cpf: string) {
     cpf = cpf.replace(/[^\d]+/g, '');
     if (cpf == '') return false;
     if (cpf.length != 11 ||
@@ -80,6 +81,17 @@ class UsersRepository implements IUsersRepository {
     if (rev != parseInt(cpf.charAt(10)))
       return false;
     return true;
+  }
+
+  async updateUser(user: User, { name, avatar, biography, email, password_hash }: IUpdateUserDTO): Promise<User> {
+    const result = await user.update({
+      name,
+      avatar,
+      biography,
+      email,
+      password_hash,
+    })
+    return result
   }
 }
 

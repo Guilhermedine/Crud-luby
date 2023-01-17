@@ -8,7 +8,6 @@ import { container } from "tsyringe";
 class UpdateUserController {
   async handle(req: Request, res: Response): Promise<Response> {
     const { id } = req.user
-
     const {
       name,
       avatar,
@@ -17,11 +16,8 @@ class UpdateUserController {
       password_hash
     } = req.body
 
-
     const updateUserUseCase = container.resolve(UpdateUserUseCase)
-
-    const update = await updateUserUseCase.execute({
-      id,
+    const update = await updateUserUseCase.execute(id, {
       name,
       avatar,
       biography,
