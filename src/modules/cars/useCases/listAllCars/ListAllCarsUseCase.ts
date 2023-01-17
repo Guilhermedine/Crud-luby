@@ -9,8 +9,8 @@ class ListAllCarsUseCase {
     @inject("CarsRepository")
     private carsRepository: ICarsRepository) { }
 
-  async execute(): Promise<Car[]> {
-    const cars = await this.carsRepository.list();
+  async execute({ status }): Promise<Car[]> {
+    const cars = await this.carsRepository.list({ status });
     return cars
   }
 }

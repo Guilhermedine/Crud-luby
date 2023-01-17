@@ -39,6 +39,12 @@ Car.init({
   solded_by: {
     type: DataTypes.STRING
   },
+  sale_value: {
+    type: DataTypes.STRING
+  },
+  reservation_amount: {
+    type: DataTypes.STRING
+  },
   created_at: {
     type: DataTypes.DATE,
   },
