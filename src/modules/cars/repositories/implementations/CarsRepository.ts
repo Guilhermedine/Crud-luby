@@ -1,6 +1,7 @@
-import { ICarDTO } from "modules/cars/dtos/ICarDTO";
+import { Car } from "../../../../database/models/Car";
+import { ICarDTO } from "../../dtos/ICarDTO";
 import { ICarsRepository } from "../ICarsRepository";
-import { Car } from "../../../../database/models/"
+
 
 
 

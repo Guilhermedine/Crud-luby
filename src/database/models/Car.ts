@@ -3,8 +3,7 @@ import { Model, DataTypes } from 'sequelize';
 
 
 
-class Car extends Model {
-}
+class Car extends Model { }
 
 Car.init({
   id: {

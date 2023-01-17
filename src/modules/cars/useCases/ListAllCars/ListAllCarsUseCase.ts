@@ -1,0 +1,21 @@
+import { inject, injectable } from "tsyringe";
+import { Car } from "../../../../database/models/Car";
+import { ICarsRepository } from "../../../../modules/cars/repositories/ICarsRepository";
+
+
+
+
+@injectable()
+class ListAllCarsUseCase {
+  constructor(
+    @inject("CarsRepository")
+    private carsRepository: ICarsRepository) { }
+
+  async execute(): Promise<Car[]> {
+    const cars = await this.carsRepository.list();
+    return cars
+  }
+}
+
+
+export { ListAllCarsUseCase }

@@ -1,6 +1,6 @@
 import { container } from "tsyringe"
 import { Request, Response } from "express"
-import { AddCarUseCase } from "./AddCarUsecase"
+import { AddCarUseCase } from "./AddCarUseCase"
 
 
 class AddCarController {
