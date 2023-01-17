@@ -5,6 +5,7 @@ interface ICarsRepository {
   create(data: ICarDTO): Promise<void>;
   list(): Promise<Car[]>;
   findByChassi(chassis: string): Promise<Car>
+  findById(id: string): Promise<Car>
 }
 
 export { ICarsRepository }

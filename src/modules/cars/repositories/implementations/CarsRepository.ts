@@ -41,6 +41,11 @@ class CarsRepository implements ICarsRepository {
     const car = await Car.findOne({ where: { chassis } })
     return car
   }
+
+  async findById(id: string): Promise<Car> {
+    const car = await Car.findOne({ where: { id } })
+    return car
+  }
 }
 
 

@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { Car } from "../../../../database/models/Car";
-import { ICarsRepository } from "../../../../modules/cars/repositories/ICarsRepository";
+import { ICarsRepository } from "../../repositories/ICarsRepository";
 
 
 
