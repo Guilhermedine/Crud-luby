@@ -7,7 +7,7 @@ import { AppError } from "../../../../errors/AppError";
 
 
 @injectable()
-class LocateCarUseCase {
+class ShowCarUseCase {
   constructor(
     @inject("CarsRepository")
     private carsRepository: ICarsRepository
@@ -24,4 +24,4 @@ class LocateCarUseCase {
 }
 
 
-export { LocateCarUseCase }
+export { ShowCarUseCase }
