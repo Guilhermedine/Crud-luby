@@ -3,8 +3,6 @@ import { Car } from "../../../../database/models/Car";
 import { ICarsRepository } from "../../repositories/ICarsRepository";
 
 
-
-
 @injectable()
 class ListAllCarsUseCase {
   constructor(
