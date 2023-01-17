@@ -6,7 +6,7 @@ import { AddCarUseCase } from "./AddCarUseCase"
 class AddCarController {
 
   async handle(req: Request, res: Response): Promise<Response> {
-    const { brand, model, year, km, color, chassis, purchase_price, status } = req.body
+    const { brand, model, year, km, color, chassis, purchase_price, status } = req.body;
     const addCarUseCase = container.resolve(AddCarUseCase);
 
     await addCarUseCase.execute({

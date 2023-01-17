@@ -34,7 +34,7 @@ class AddCarUseCase {
       chassis,
       purchase_price,
       status,
-    })
+    });
   }
 }
 
