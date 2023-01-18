@@ -18,7 +18,7 @@ class SellCarUseCase {
       throw new AppError("Car not found")
     }
 
-    await this.carsRepository.update(car, {
+    await this.carsRepository.updateCar(car, {
       solded_by,
       status,
       sale_value

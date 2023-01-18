@@ -11,13 +11,13 @@ class SellCarController {
     const { solded_by, status, sale_value } = req.body;
 
     const sellCarUseCase = container.resolve(SellCarUseCase);
-    await sellCarUseCase.execute(id, {
+    const carSelled = await sellCarUseCase.execute(id, {
       solded_by,
       status,
       sale_value
     })
 
-    return res.status(201)
+    return res.json({ message: carSelled }).status(201)
   }
 }
 
