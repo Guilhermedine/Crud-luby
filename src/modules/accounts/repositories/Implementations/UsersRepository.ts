@@ -84,20 +84,19 @@ class UsersRepository implements IUsersRepository {
   }
 
   async updateUser(user: User, { name, avatar, biography, email, password_hash }: IUpdateUserDTO): Promise<User> {
-    const result = await user.update({
+    const userUpdated = await user.update({
       name,
       avatar,
       biography,
       email,
       password_hash,
     })
-    return result
+    return userUpdated
   }
 
   async deleteUser(user: User) {
-    const result = await user.destroy();
-
-    return result
+    const userDeleted = await user.destroy();
+    return userDeleted
   }
 }
 
