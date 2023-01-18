@@ -47,14 +47,19 @@ class CarsRepository implements ICarsRepository {
     return car
   }
 
-  async update(car: Car, { solded_by, status, sale_value }: ICarUpdateDTO): Promise<Car> {
-    const result = await car.update({
+  async updateCar(car: Car, { solded_by, status, sale_value }: ICarUpdateDTO): Promise<Car> {
+    const carUpdated = await car.update({
       solded_by,
       status,
       sale_value
     })
 
-    return result
+    return carUpdated
+  }
+
+  async deleteCar(car: Car) {
+    const carDeleted = car.destroy()
+    return carDeleted
   }
 }
 

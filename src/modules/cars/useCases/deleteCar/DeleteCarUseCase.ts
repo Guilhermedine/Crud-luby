@@ -18,9 +18,7 @@ class DeleteCarUseCase {
       throw new AppError("Car not found", 400)
     }
 
-    await Car.destroy({
-      where: { id }
-    });
+    await this.carsRepository.deleteCar(car)
 
     return car
   }

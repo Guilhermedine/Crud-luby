@@ -8,7 +8,8 @@ interface ICarsRepository {
   list(filters: ICarFiltersDTO): Promise<Car[]>;
   findByChassi(chassis: string): Promise<Car>
   findById(id: string): Promise<Car>
-  update(car: Car, data: ICarUpdateDTO): Promise<Car>
+  updateCar(car: Car, data: ICarUpdateDTO): Promise<Car>
+  deleteCar(car: Car)
 }
 
 export { ICarsRepository }
