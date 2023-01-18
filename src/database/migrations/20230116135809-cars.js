@@ -38,10 +38,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      reservation_amount: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
       sale_value: {
         type: Sequelize.STRING,
         allowNull: true,

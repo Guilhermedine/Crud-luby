@@ -51,7 +51,7 @@ class CarsRepository implements ICarsRepository {
     const carUpdated = await car.update({
       solded_by,
       status,
-      sale_value
+      sale_value,
     })
 
     return carUpdated
