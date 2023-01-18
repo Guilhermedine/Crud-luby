@@ -10,7 +10,7 @@ class CreateUserController {
     const { cpf, name, email, avatar, password_hash, biography } = req.body;
     const createUserUseCase = container.resolve(CreateUserUseCase);
 
-    await createUserUseCase.execute({
+    const userCreated = await createUserUseCase.execute({
       cpf,
       name,
       avatar,
@@ -19,7 +19,7 @@ class CreateUserController {
       biography
     });
 
-    return res.status(201);
+    return res.json({ message: userCreated }).status(201);
   }
 }
 

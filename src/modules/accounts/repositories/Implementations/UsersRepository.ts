@@ -93,6 +93,12 @@ class UsersRepository implements IUsersRepository {
     })
     return result
   }
+
+  async deleteUser(user: User) {
+    const result = await user.destroy();
+
+    return result
+  }
 }
 
 

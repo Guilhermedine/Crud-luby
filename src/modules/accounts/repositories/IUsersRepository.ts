@@ -10,6 +10,7 @@ interface IUsersRepository {
   findById(id: string): Promise<User>
   validateCPF(cpf: string)
   updateUser(user: User, data: IUpdateUserDTO): Promise<User>
+  deleteUser(user: User)
 }
 
 export { IUsersRepository }

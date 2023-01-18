@@ -9,7 +9,7 @@ class AddCarController {
     const { brand, model, year, km, color, chassis, purchase_price, status } = req.body;
     const addCarUseCase = container.resolve(AddCarUseCase);
 
-    await addCarUseCase.execute({
+    const carAdded = await addCarUseCase.execute({
       brand,
       model,
       year,
@@ -20,7 +20,7 @@ class AddCarController {
       status,
     });
 
-    return res.status(201);
+    return res.json({ message: carAdded }).status(201);
   }
 }
 
